@@ -565,6 +565,7 @@ class _MapLocationPickerState extends State<MapLocationPicker> {
                       placesDetails.result.geometry?.location.lat ?? 0,
                       placesDetails.result.geometry?.location.lng ?? 0,
                     );
+                    _zoom = 12.0;
                     final controller = await _controller.future;
                     controller.animateCamera(
                         CameraUpdate.newCameraPosition(cameraPosition()));
