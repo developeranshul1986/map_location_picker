@@ -300,6 +300,8 @@ class MapLocationPicker extends StatefulWidget {
     String address,
   )? bottomCardBuilder;
 
+  final double? zoom;
+
   const MapLocationPicker({
     super.key,
     this.desiredAccuracy = LocationAccuracy.high,
@@ -393,6 +395,7 @@ class MapLocationPicker extends StatefulWidget {
     this.zoomGesturesEnabled = true,
     this.decoration,
     this.bottomCardBuilder,
+    this.zoom,
   });
 
   @override
@@ -766,6 +769,7 @@ class _MapLocationPickerState extends State<MapLocationPicker> {
   @override
   void initState() {
     _initialPosition = widget.currentLatLng ?? _initialPosition;
+    _zoom = widget.zoom ?? _zoom;
     _mapType = widget.mapType;
     _searchController = widget.searchController ?? _searchController;
     if (widget.currentLatLng != null) {
